@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hotel_Systeem
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -20,6 +20,13 @@ namespace Hotel_Systeem
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReservations_Click(object sender, EventArgs e)
+        {
+            AddReservations addReservations = new AddReservations();
+            addReservations.Show();
+            this.Hide();
         }
     }
 }
