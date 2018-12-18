@@ -22,11 +22,6 @@ namespace Hotel_Systeem
 
         }
 
-        private void btnAddReservation_Click(object sender, EventArgs e)
-        {
-            AllCustomers.AddRange(NewCustomers);
-        }
-
         private void CalendarStartDate_DateChanged(object sender, DateRangeEventArgs e)
         {
             lblSelectedStartDate.Text = CalendarStartDate.SelectionRange.Start.ToShortDateString();
@@ -73,6 +68,11 @@ namespace Hotel_Systeem
             {
                 amountOfPersons = Convert.ToInt32(nudPersons.Value);
             }
+        }
+
+        private void btnAddReservation_Click_1(object sender, EventArgs e)
+        {
+            AllCustomers.AddRange(NewCustomers);
         }
     }
 }
