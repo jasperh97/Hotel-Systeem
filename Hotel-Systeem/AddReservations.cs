@@ -12,8 +12,8 @@ namespace Hotel_Systeem
 {
     public partial class AddReservations : Form
     {
-        int amountOfPersons = 0;
-        List<Customer> customers = new List<Customer>();
+        int amountOfPersons = 1;
+        List<Customer> NewCustomers = new List<Customer>();
 
         public AddReservations()
         {
@@ -23,7 +23,7 @@ namespace Hotel_Systeem
 
         private void btnAddReservation_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void CalendarStartDate_DateChanged(object sender, DateRangeEventArgs e)
@@ -39,14 +39,14 @@ namespace Hotel_Systeem
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            if (customers.Count < amountOfPersons)
+            if (NewCustomers.Count < amountOfPersons)
             {
-                customers.Add(ReservationHandling.AddCustomerInfo(customers, tbSurname, tbLastName, comboBoxSex, nudAge, tbAddress, tbPostalCode, tbMobileNr));
-                foreach (Customer customer in customers)
+                NewCustomers.Add(ReservationHandling.AddCustomerInfo(NewCustomers, tbSurname, tbLastName, comboBoxSex, nudAge, tbAddress, tbPostalCode, tbMobileNr));
+                foreach (Customer customer in NewCustomers)
                 {
-                    if (customer.CustomerNr == customers.Count())
+                    if (customer.CustomerNr == NewCustomers.Count())
                     {
-                        clbCurrentCustomerList.Items.Add(customers.IndexOf(customer) + " " + customer.Surname + " " + customer.Lastname);
+                        clbCurrentCustomerList.Items.Add(NewCustomers.IndexOf(customer) + " " + customer.Surname + " " + customer.Lastname);
                     }
                 }
             }
@@ -60,13 +60,8 @@ namespace Hotel_Systeem
         {
             foreach (var item in clbCurrentCustomerList.CheckedItems.OfType<string>().ToList())
             {
+                NewCustomers.RemoveAt(clbCurrentCustomerList.Items.IndexOf(item));
                 clbCurrentCustomerList.Items.Remove(item);
-                
-            }
-
-            foreach (var checkedItem in clbCurrentCustomerList.CheckedItems)
-            {
-
             }
             
         }
