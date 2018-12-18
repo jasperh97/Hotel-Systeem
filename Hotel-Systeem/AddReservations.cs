@@ -14,6 +14,7 @@ namespace Hotel_Systeem
     {
         int amountOfPersons = 1;
         List<Customer> NewCustomers = new List<Customer>();
+        List<Customer> AllCustomers = new List<Customer>();
 
         public AddReservations()
         {
@@ -23,7 +24,7 @@ namespace Hotel_Systeem
 
         private void btnAddReservation_Click(object sender, EventArgs e)
         {
-            
+            AllCustomers.AddRange(NewCustomers);
         }
 
         private void CalendarStartDate_DateChanged(object sender, DateRangeEventArgs e)
