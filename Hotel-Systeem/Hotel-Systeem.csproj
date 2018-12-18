@@ -65,6 +65,7 @@
     <Compile Include="ReservationHandling.cs" />
     <Compile Include="RestaurantReservation.cs" />
     <Compile Include="Room.cs" />
+    <Compile Include="XmlFileHandling.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
