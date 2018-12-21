@@ -80,6 +80,21 @@ namespace Hotel_Systeem
             NewCustomers.Clear();
             clbCurrentCustomerList.Items.Clear();
 
+            foreach (Control control in groupBoxCustomerInfo.Controls)
+            {
+                if (control is TextBox)
+                {
+                    control.Text = "";
+                }
+                else if (control is ComboBox)
+                {
+                    ((ComboBox)control).SelectedIndex = 0;
+                }
+            }
+
+            nudAge.Value = 0;
+            nudPersons.Value = 1;
+
             XmlFileHandling.XmlSerialization(AllCustomers);
         }
     }

@@ -15,7 +15,7 @@ namespace Hotel_Systeem
         {
             XmlSerializer xmlSerializer = new XmlSerializer(Customer.GetType());
 
-            TextWriter textWriter = new StreamWriter(Application.StartupPath + @"\AllCustomers.xml");
+            TextWriter textWriter = new StreamWriter(@"..\..\Resources\AllCustomers.xml");
 
             xmlSerializer.Serialize(textWriter, Customer);
 
@@ -26,7 +26,7 @@ namespace Hotel_Systeem
         {
             XmlSerializer deSerializer = new XmlSerializer(typeof(List<Customer>));
 
-            TextReader textReader = new StreamReader(Application.StartupPath + @"\AllCustomers.xml");
+            TextReader textReader = new StreamReader(@"..\..\Resources\AllCustomers.xml");
 
             List<Customer> retVal = (List<Customer>)deSerializer.Deserialize(textReader);
 

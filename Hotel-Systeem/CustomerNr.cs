@@ -9,11 +9,11 @@ namespace Hotel_Systeem
 {
     static class CustomerNr
     {
-        static int CustomerID = Convert.ToInt32(System.IO.File.ReadAllText(Application.StartupPath + @"\CustomerID.txt"));
+        static int CustomerID = Convert.ToInt32(System.IO.File.ReadAllText(@"..\..\Resources\CustomerID.txt"));
         public static int getCustomerNr()
         {
             CustomerID++;
-            System.IO.File.WriteAllText(Application.StartupPath + @"\CustomerID.txt", CustomerID.ToString());
+            System.IO.File.WriteAllText(@"..\..\Resources\CustomerID.txt", CustomerID.ToString());
             return CustomerID;
         }
     }

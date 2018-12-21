@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Customer CustomerNr="1">
+    <Surname>Jasper</Surname>
+    <Lastname>Hetterscheid</Lastname>
+    <Sex>Man</Sex>
+    <Age>21</Age>
+    <Address>Sijs 12, Boxmeer</Address>
+    <PostalCode>5831NJ</PostalCode>
+    <MobileNr>0618627341</MobileNr>
+  </Customer>
+</ArrayOfCustomer>
