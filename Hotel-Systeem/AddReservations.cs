@@ -41,7 +41,7 @@ namespace Hotel_Systeem
                 {
                     if (customer.CustomerNr == NewCustomers.Count())
                     {
-                        clbCurrentCustomerList.Items.Add(NewCustomers.IndexOf(customer) + " " + customer.Surname + " " + customer.Lastname);
+                        clbCurrentCustomerList.Items.Add(customer.Surname + " " + customer.Lastname);
                     }
                 }
             }
@@ -71,7 +71,15 @@ namespace Hotel_Systeem
 
         private void btnAddReservation_Click_1(object sender, EventArgs e)
         {
+            foreach (Customer customer in NewCustomers)
+            {
+                customer.CustomerNr = CustomerNr.getCustomerNr();
+            }
+
             AllCustomers.AddRange(NewCustomers);
+            NewCustomers.Clear();
+            clbCurrentCustomerList.Items.Clear();
+
             XmlFileHandling.XmlSerialization(AllCustomers);
         }
     }
