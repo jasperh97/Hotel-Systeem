@@ -34,31 +34,12 @@ namespace Hotel_Systeem
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            if (NewCustomers.Count < amountOfPersons)
-            {
-                NewCustomers.Add(ReservationHandling.AddCustomerInfo(NewCustomers, tbSurname, tbLastName, comboBoxSex, nudAge, tbAddress, tbPostalCode, tbMobileNr));
-                foreach (Customer customer in NewCustomers)
-                {
-                    if (customer.CustomerNr == NewCustomers.Count())
-                    {
-                        clbCurrentCustomerList.Items.Add(customer.Surname + " " + customer.Lastname);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Max customers reached.");
-            }
+            NewCustomerListHandling.AddCustomerToList(NewCustomers, clbCurrentCustomerList, amountOfPersons, tbSurname, tbLastName, comboBoxSex, nudAge, tbAddress, tbPostalCode, tbMobileNr);
         }
 
         private void deleteCustomer_Click(object sender, EventArgs e)
         {
-            foreach (var item in clbCurrentCustomerList.CheckedItems.OfType<string>().ToList())
-            {
-                NewCustomers.RemoveAt(clbCurrentCustomerList.Items.IndexOf(item));
-                clbCurrentCustomerList.Items.Remove(item);
-            }
-            
+            NewCustomerListHandling.DeleteCustomerFromNewList(clbCurrentCustomerList, NewCustomers);
         }
 
         private void nudPersons_ValueChanged_1(object sender, EventArgs e)

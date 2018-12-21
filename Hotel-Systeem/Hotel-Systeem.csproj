@@ -63,7 +63,7 @@
     <Compile Include="AddReservations.Designer.cs">
       <DependentUpon>AddReservations.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReservationHandling.cs" />
+    <Compile Include="NewCustomerListHandling.cs" />
     <Compile Include="RestaurantReservation.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="XmlFileHandling.cs" />

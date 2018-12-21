@@ -9,4 +9,13 @@
     <PostalCode>5831NJ</PostalCode>
     <MobileNr>0618627341</MobileNr>
   </Customer>
+  <Customer CustomerNr="2">
+    <Surname>default</Surname>
+    <Lastname>default</Lastname>
+    <Sex />
+    <Age>0</Age>
+    <Address>default</Address>
+    <PostalCode>default</PostalCode>
+    <MobileNr>default</MobileNr>
+  </Customer>
 </ArrayOfCustomer>
